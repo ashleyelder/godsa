@@ -1,0 +1,1 @@
+beginning to place implementations of common data structures and algorithms in go here
