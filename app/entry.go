@@ -8,7 +8,7 @@ import (
 func main() {
 	// q := queue.Int
 	// queue.Int is not an expression
-	var q queue.Int
+	var q queue.ItemQueue
 
 	q.Enqueue(123)
 	q.Enqueue(43)

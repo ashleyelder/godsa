@@ -5,12 +5,17 @@
 package queue
 
 // int is inside the queue package call it by saying queue.Int
-type Int struct {
+type ItemQueue struct {
 	slice []int
 }
 
+func (q *ItemQueue) New() *ItemQueue {
+	q.slice = []int{}
+	return q
+}
+
 //enqueue adds the integer provided to the back of the Queue
-func (q *Int) Enqueue(i int) {
+func (q *ItemQueue) Enqueue(i int) {
 	// adds item to end of slice
 	q.slice = append(q.slice, i)
 }
@@ -18,7 +23,7 @@ func (q *Int) Enqueue(i int) {
 // dequeue return the first item in the queue
 // and removes that item from the front of the queue
 // or panics if there isn't one
-func (q *Int) Dequeue() int {
+func (q *ItemQueue) Dequeue() int {
 	// return the first item in the queue
 	ret := q.slice[0]
 	// remove the first item from the queue
